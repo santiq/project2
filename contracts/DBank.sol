@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 
-contract DEXBank {
+contract DBank {
 
     // Constructor. 
     // Called at the time of deploy
@@ -16,7 +16,7 @@ contract DEXBank {
     error InsufficientBalance(uint256 available, uint256 required);
 
     // Only owner can deposit and withdraw from this contract
-    function deposit() public payable {
+    function deposit() external payable {
         // Deposit some money into the balances
         // Make sure to use += instead of just = 
         balances[msg.sender] += msg.value;
@@ -44,9 +44,9 @@ contract DEXBank {
     }
 
     function getMyBalance() public view returns (uint256) {
-        return address(this).balance;
+        return balances[msg.sender];
     }
     function getBalanceFrom(address _add) public view returns (uint256) {
-        return address(_add).balance;
+        return balances[_add];
     }
 }

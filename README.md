@@ -1,4 +1,4 @@
-# Project 2 - My personal playground with solidity && dapps
+# Project 2 - My personal playground for solidity && dapps
 
 # Development
 
@@ -17,12 +17,36 @@ ganache-cli
 
 ## 4 - Deploy your contracts into the blockchain using truffle suit
 ```
-truffle migrate
+truffle compile && truffle migrate
+```
+
+Take note of the contract address
+
+```
+...
+
+2_deploy.contract.js
+====================
+
+   Deploying 'DBank'
+   -----------------
+   > transaction hash:    0xd139b07a019619b45cd08cd971264c25dfc1bf68f1b07cf7c9ddf67738bf0ea4
+   > Blocks: 0            Seconds: 0
+   ------> contract address:    0xCB2Fe39E7d6a27355170895D89e52A19664F144A    <------ 
+   > block number:        3
+
+...
+
 ```
 
 ## 5 - Interact with your contract from node.js or web browser
 ```
 node index.js
+```
+Or use the **truffle console** 
+
+```
+truffle console
 ```
 
 ## 6 - Profit
